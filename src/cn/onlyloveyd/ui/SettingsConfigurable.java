@@ -14,6 +14,9 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
 import java.awt.*;
 
 public class SettingsConfigurable implements Configurable {
@@ -30,7 +33,7 @@ public class SettingsConfigurable implements Configurable {
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
     public String getDisplayName() {
-        return "Android Device Monitor Location";
+        return "Android SDK Location";
     }
 
     @Nullable
@@ -40,6 +43,22 @@ public class SettingsConfigurable implements Configurable {
         if (!TextUtils.isEmpty(path)) {
             locationFiled.setText(path);
         }
+        locationFiled.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                setModified(true);
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                setModified(true);
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                setModified(true);
+            }
+        });
         select.addActionListener(e -> {
             FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFileDescriptor();
             VirtualFile virtualFile = FileChooser.chooseFile(descriptor, ProjectUtil.guessCurrentProject(select), null);

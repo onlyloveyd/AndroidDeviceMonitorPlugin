@@ -31,8 +31,7 @@
     <actions>
         <!-- Add your actions here -->
         <action id="ForwardID" class="cn.onlyloveyd.action.LaunchMonitorAction" text="AndroidDeviceMonitor"
-                description="打开AndroidDeviceMonitor"
-                icon="/icon/icon.png">
+            description="打开AndroidDeviceMonitor" icon="/icon/icon.png">
             <add-to-group group-id="MainToolBar" anchor="last"/>
         </action>
     </actions>
