@@ -1,0 +1,40 @@
+<idea-plugin>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>AndroidDeviceMonitorEntry</name>
+    <version>1.0</version>
+    <vendor email="onlyloveyd@gmail.com" url="https://onlyloveyd.cn">Onlyloveyd.cn</vendor>
+
+    <description><![CDATA[
+      Access AndroidDeviceMonitor Quickly<br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      First Version<br>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!-- Add your extensions here -->
+        <applicationConfigurable instance="cn.onlyloveyd.ui.SettingsConfigurable"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="ForwardID" class="cn.onlyloveyd.action.LaunchMonitorAction" text="AndroidDeviceMonitor"
+                description="打开AndroidDeviceMonitor"
+                icon="/icon/icon.png">
+            <add-to-group group-id="MainToolBar" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
