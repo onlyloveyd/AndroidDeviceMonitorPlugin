@@ -26,7 +26,7 @@ public class SettingsConfigurable implements Configurable {
     public JButton select = new JButton(AllIcons.Nodes.PpFile);
     private JPanel settingsPanel = new JPanel();
     private JLabel titleLabel = new JLabel(
-            "monitor.bar location");
+            "Android SDK Location");
     private boolean modified = false;
     private String locationPath = "";
 

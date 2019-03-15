@@ -28,7 +28,7 @@ public class LaunchMonitorAction extends AnAction {
         String path = PropertiesComponent.getInstance().getValue(KEY_DEFAULT_DIR);
         if (TextUtils.isEmpty(path)) {
             Messages.showMessageDialog(
-                    "请在“Other Settings”中设置 Android SDK 位置",
+                    "请在“Other Settings”中设置 Android SDK Location",
                     "Warning",
                     Messages.getInformationIcon()
             );
@@ -41,10 +41,10 @@ public class LaunchMonitorAction extends AnAction {
         String cmd;
 
         if (isWindows) {
-            String lunchPath = PropertiesComponent.getInstance().getValue(KEY_DEFAULT_DIR) + "tools/monitor.bat";
+            String lunchPath = PropertiesComponent.getInstance().getValue(KEY_DEFAULT_DIR) + "/tools/monitor.bat";
             cmd = "cmd /c start /b " + lunchPath;
         } else {
-            String lunchPath = PropertiesComponent.getInstance().getValue(KEY_DEFAULT_DIR) + "tools/monitor";
+            String lunchPath = PropertiesComponent.getInstance().getValue(KEY_DEFAULT_DIR) + "/tools/monitor";
             cmd = "/bin/bash  " + lunchPath;
         }
         try {
