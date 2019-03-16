@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.your.company.unique.plugin.id</id>
+    <id>cn.onlyloveyd.AndroidDeviceMonitor</id>
     <name>AndroidDeviceMonitorEntry</name>
     <version>1.0</version>
     <vendor email="onlyloveyd@gmail.com" url="https://onlyloveyd.cn">Onlyloveyd.cn</vendor>
@@ -9,7 +9,7 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      First Version<br>
+      Try try try<br>
     ]]>
     </change-notes>
 

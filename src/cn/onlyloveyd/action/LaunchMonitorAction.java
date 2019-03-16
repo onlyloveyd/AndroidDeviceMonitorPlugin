@@ -14,6 +14,9 @@ import static cn.onlyloveyd.ui.SettingsConfigurable.KEY_DEFAULT_DIR;
 public class LaunchMonitorAction extends AnAction {
     private static boolean isWindows = true;
 
+    /**
+     * 获取操作系统类型，目前只区分了windows和非windows
+     */
     static {
         String os = System.getProperty("os.name");
         if (os != null) {
@@ -27,6 +30,9 @@ public class LaunchMonitorAction extends AnAction {
         // TODO: insert action logic here
         String path = PropertiesComponent.getInstance().getValue(KEY_DEFAULT_DIR);
         if (TextUtils.isEmpty(path)) {
+            /**
+             * 提示用户SDK路径为空
+             */
             Messages.showMessageDialog(
                     "请在“Other Settings”中设置 Android SDK Location",
                     "Warning",
@@ -40,6 +46,9 @@ public class LaunchMonitorAction extends AnAction {
     public void runBat() {
         String cmd;
 
+        /**
+         * 区分windows系统和其他系统
+         */
         if (isWindows) {
             String lunchPath = PropertiesComponent.getInstance().getValue(KEY_DEFAULT_DIR) + "/tools/monitor.bat";
             cmd = "cmd /c start /b " + lunchPath;
